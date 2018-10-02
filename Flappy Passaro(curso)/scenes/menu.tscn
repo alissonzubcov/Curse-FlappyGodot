@@ -1,0 +1,119 @@
+[gd_scene load_steps=5 format=1]
+
+[ext_resource path="res://script/menu.gd" type="Script" id=1]
+[ext_resource path="res://assets/Background/background-night.png" type="Texture" id=2]
+[ext_resource path="res://fonts/f19.fnt" type="BitmapFont" id=3]
+[ext_resource path="res://fonts/f35.fnt" type="BitmapFont" id=4]
+
+[node name="menu" type="Node2D"]
+
+script/script = ExtResource( 1 )
+
+[node name="bg" type="Sprite" parent="."]
+
+texture = ExtResource( 2 )
+centered = false
+
+[node name="pt" type="Label" parent="."]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 75.0
+margin/top = 473.0
+margin/right = 215.0
+margin/bottom = 494.0
+custom_fonts/font = ExtResource( 3 )
+text = "0"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="botoes" type="Control" parent="."]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 40.0
+margin/bottom = 40.0
+
+[node name="jogar" type="Button" parent="botoes"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 15.0
+margin/top = 205.0
+margin/right = 266.0
+margin/bottom = 260.0
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 0.988235, 0.721569, 0, 1 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+text = "JOGAR"
+flat = true
+
+[node name="maior_pontuacao" type="Label" parent="."]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 75.0
+margin/top = 451.0
+margin/right = 215.0
+margin/bottom = 472.0
+custom_fonts/font = ExtResource( 3 )
+text = "Maior Pontuacao"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="titulo" type="Label" parent="."]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 24.0
+margin/top = 57.0
+margin/right = 263.0
+margin/bottom = 95.0
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 0.0502014, 0.850873, 0.917969, 1 )
+custom_colors/font_color_shadow = Color( 0.682353, 0.909804, 0.823529, 1 )
+text = "Flappy Passaro"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="feito_por" type="Label" parent="."]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 24.0
+margin/top = 100.0
+margin/right = 263.0
+margin/bottom = 138.0
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 0.0695801, 0.0738601, 0.0742188, 1 )
+custom_colors/font_color_shadow = Color( 0, 0.701961, 0.760784, 1 )
+text = "Alisson Zubcov"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[connection signal="pressed" from="botoes/jogar" to="." method="_on_jogar_pressed"]
+
+
